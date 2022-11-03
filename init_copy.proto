@@ -1,0 +1,28 @@
+syntax = "proto3";
+import public "global_options.proto";
+
+option go_package="./;proto";
+option java_package = "org.liquibase.grpc.proto";
+option java_multiple_files = true;
+option java_outer_classname = "InitCopyProto";
+
+package liquibase;
+
+service InitCopyService {
+  rpc execute(Init.CopyRequest) returns (Response) {}
+}
+
+/* Copy project files from the source directory to the target directory. */
+message Init {
+  message CopyRequest {
+    optional string project_copier = 1; // ProjectCopier object that can be passed in
+    optional bool recursive = 2; // Recursive copy files from the source directory
+    optional string source = 3; // Path to the directory where the project files will be created
+    optional string target = 4; // Source directory where the project files will be copied from
+    liquibase.GlobalOptions global_options = 5;
+  }
+}
+
+message Response {
+  string message = 1;
+}
