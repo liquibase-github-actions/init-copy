@@ -6,7 +6,7 @@ Copy project files from the source directory to the target directory.
 ```yaml
 steps:
 - uses: actions/checkout@v3
-- uses: liquibase-github-actions/init-copy@v4.19.1
+- uses: liquibase-github-actions/init-copy@v4.20.0
   with:
     # ProjectCopier object that can be passed in
     # string
@@ -40,7 +40,7 @@ The liquibase init copy action accepts all valid liquibase global options as opt
 ```yaml
 steps:
   - uses: actions/checkout@v3
-  - uses: liquibase-github-actions/init-copy@v4.19.1
+  - uses: liquibase-github-actions/init-copy@v4.20.0
     with:
       headless: true
       licenseKey: ${{ secrets.LIQUIBASE_LICENSE_KEY }}
