@@ -8,11 +8,6 @@ steps:
 - uses: actions/checkout@v3
 - uses: liquibase-github-actions/init-copy@v4.23.0
   with:
-    # ProjectCopier object that can be passed in
-    # string
-    # Optional
-    projectCopier: ""
-
     # Recursive copy files from the source directory
     # bool
     # Optional

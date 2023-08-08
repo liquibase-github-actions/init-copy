@@ -15,11 +15,10 @@ service InitCopyService {
 /* Copy project files from the source directory to the target directory. */
 message Init {
   message CopyRequest {
-    optional string project_copier = 1; // ProjectCopier object that can be passed in
-    optional bool recursive = 2; // Recursive copy files from the source directory
-    optional string source = 3; // Path to the directory where the project files will be created
-    optional string target = 4; // Source directory where the project files will be copied from
-    liquibase.GlobalOptions global_options = 5;
+    optional bool recursive = 1; // Recursive copy files from the source directory
+    optional string source = 2; // Path to the directory where the project files will be created
+    optional string target = 3; // Source directory where the project files will be copied from
+    liquibase.GlobalOptions global_options = 4;
   }
 }
 
